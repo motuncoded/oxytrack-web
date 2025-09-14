@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import React, { useState } from "react";
 import useLogin from "../hooks/useLogin";
+
 const Signin = () => {
   const [formData, setFormData] = useState({
     username: "",
@@ -88,7 +89,7 @@ const Signin = () => {
         </form>
         <p className="text-center mt-4">
           Dont have an account ?{" "}
-          <Link href="/signup" className="text-blue-600">
+          <Link to="/signup" className="text-blue-600">
             Sign up
           </Link>
         </p>

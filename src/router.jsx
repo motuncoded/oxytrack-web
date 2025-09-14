@@ -7,8 +7,15 @@ import {
 import NotFound from "./routes/NotFound";
 import Signup from "./routes/Signup";
 import Signin from "./routes/Signin";
-import Dashboard from "./routes/Dashboard";
+import Home from "./routes/Home";
+import { ProtectedRoute } from "./components/ProtectedRoute";
 
+// Protected Home component
+const ProtectedHome = () => (
+  <ProtectedRoute>
+    <Home />
+  </ProtectedRoute>
+);
 // All routes
 
 const rootRoute = createRootRoute(); // Removed the Layout component
@@ -16,17 +23,17 @@ const rootRoute = createRootRoute(); // Removed the Layout component
 const indexRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/",
-  component: Signup,
-});
-const signinRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/signin",
   component: Signin,
 });
-const dashboardRoute = createRoute({
+const signupRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: "/dashboard",
-  component: Dashboard,
+  path: "/signup",
+  component: Signup,
+});
+const homeRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/home",
+  component: ProtectedHome,
 });
 const notFoundRoute = createRoute({
   getParentRoute: () => rootRoute,
@@ -36,8 +43,8 @@ const notFoundRoute = createRoute({
 
 const routeTree = rootRoute.addChildren([
   indexRoute,
-  signinRoute,
-  dashboardRoute,
+  signupRoute,
+  homeRoute,
   notFoundRoute,
 ]);
 
