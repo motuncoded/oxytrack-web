@@ -8,8 +8,9 @@ import {
 } from "react-icons/fa";
 import { PiCylinderBold } from "react-icons/pi";
 import { useAuth } from "../hooks/auth/useAuth";
+import { Link } from "@tanstack/react-router";
 const Sidebar = () => {
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
 
   const [activeItem, setActiveItem] = useState(1);
 
@@ -22,9 +23,9 @@ const Sidebar = () => {
     },
     {
       id: 2,
-      label: "Cylinder",
+      label: "Cylinders",
       icon: <PiCylinderBold className="text-lg" />,
-      path: "/projects",
+      path: "/cylinders",
     },
     {
       id: 3,
@@ -61,7 +62,7 @@ const Sidebar = () => {
               <h1 className="text-lg font-bold">O</h1>
             </div>
             <div className="hidden md:block ml-3">
-              <h1 className="text-lg font-semibold text-gray-800">OxyTract</h1>
+              <h1 className="text-lg font-semibold text-gray-800">OxyTrack</h1>
             </div>
           </div>
         </div>
@@ -71,8 +72,7 @@ const Sidebar = () => {
           <ul className="space-y-1">
             {menuItems.map((item) => (
               <li key={item.id}>
-                <a
-                  href={item.path}
+                <Link to={item.path}
                   className={`flex items-center p-3 rounded-lg transition-colors duration-200 group ${
                     activeItem === item.id
                       ? "bg-blue-100 text-blue-700"
@@ -86,7 +86,7 @@ const Sidebar = () => {
                     {item.icon}
                   </span>
                   <span className="hidden md:block ml-3">{item.label}</span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
