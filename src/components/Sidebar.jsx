@@ -72,7 +72,8 @@ const Sidebar = () => {
           <ul className="space-y-1">
             {menuItems.map((item) => (
               <li key={item.id}>
-                <Link to={item.path}
+                <Link
+                  to={item.path}
                   className={`flex items-center p-3 rounded-lg transition-colors duration-200 group ${
                     activeItem === item.id
                       ? "bg-blue-100 text-blue-700"

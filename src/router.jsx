@@ -47,8 +47,6 @@ const notFoundRoute = createRoute({
   component: NotFound,
 });
 
-
-
 const routeTree = rootRoute.addChildren([
   indexRoute,
   signupRoute,
