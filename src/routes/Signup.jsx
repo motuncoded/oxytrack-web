@@ -144,7 +144,7 @@ const Signup = () => {
                 required
                 minLength="6"
               />
-              <button onClick={handlePassword}>
+              <button type="button" onClick={handlePassword}>
                 {showPassword ? <FaEye /> : <FaEyeSlash />}
               </button>
             </div>
@@ -167,7 +167,7 @@ const Signup = () => {
                 required
                 minLength="6"
               />
-              <button onClick={handleConfirmPassword}>
+              <button type="button" onClick={handleConfirmPassword}>
                 {showPassword ? <FaEye /> : <FaEyeSlash />}
               </button>
             </div>

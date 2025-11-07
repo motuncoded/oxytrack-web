@@ -84,7 +84,7 @@ const Signin = () => {
                 onChange={handleChange}
                 required
               />
-              <button onClick={handlePassword}>
+              <button type="button" onClick={handlePassword}>
                 {showPassword ? <FaEye /> : <FaEyeSlash />}
               </button>
             </div>
