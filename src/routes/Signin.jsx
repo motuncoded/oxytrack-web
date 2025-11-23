@@ -6,7 +6,7 @@ import { FaEyeSlash, FaEye } from "react-icons/fa6";
 const Signin = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
-    username: "",
+    email: "",
     password: "",
   });
   const [error, setError] = useState("");
@@ -28,7 +28,7 @@ const Signin = () => {
     e.preventDefault();
     setError("");
 
-    if (!formData.username || !formData.password) {
+    if (!formData.email || !formData.password) {
       setError("Username and password are required.");
       return;
     }
@@ -52,17 +52,17 @@ const Signin = () => {
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div>
             <label
-              htmlFor="username"
+              htmlFor="email"
               className="block text-sm font-medium text-gray-700"
             >
-              Username
+              Email
             </label>
             <input
-              type="text"
-              id="username"
-              name="username"
+              type="email"
+              id="email"
+              name="email"
               className="mt-1 block w-full border-2 border-gray-300  rounded-md p-2  focus-within:border-[#0097b2] outline-none"
-              value={formData.username}
+              value={formData.email}
               onChange={handleChange}
               required
             />

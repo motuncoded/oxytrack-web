@@ -3,7 +3,9 @@ import { useAuth } from "../hooks/auth/useAuth";
 import { Navigate } from "@tanstack/react-router";
 
 export function ProtectedRoute({ children }) {
-  const { isAuthenticated, loading } = useAuth();
+  const { loading } = useAuth();
+
+  // const { isAuthenticated, loading } = useAuth();
 
   if (loading) {
     return (
@@ -13,9 +15,9 @@ export function ProtectedRoute({ children }) {
     );
   }
 
-  if (!isAuthenticated) {
-    return <Navigate to="/signin" />;
-  }
+  // if (!isAuthenticated) {
+  //   return <Navigate to="/" />;
+  // }
 
   return children;
 }
