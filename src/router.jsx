@@ -10,6 +10,7 @@ import Signin from "./routes/Signin";
 import Home from "./routes/Home";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import Cylinders from "./routes/Cylinders";
+import Facilities from "./routes/Facilities";
 
 // Protected Home component
 const ProtectedHome = () => (
@@ -41,6 +42,11 @@ const cylindersRoute = createRoute({
   path: "/cylinders",
   component: Cylinders,
 });
+const facilitiesRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/facilities",
+  component: Facilities,
+});
 const notFoundRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "*",
@@ -52,6 +58,7 @@ const routeTree = rootRoute.addChildren([
   signupRoute,
   homeRoute,
   cylindersRoute,
+  facilitiesRoute,
   notFoundRoute,
 ]);
 

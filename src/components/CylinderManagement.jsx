@@ -1,12 +1,14 @@
 import React from "react";
+import { FaPlus } from "react-icons/fa6";
 
 const CylinderManagement = () => {
   return (
     <div className="p-4 w-full">
       <div className="flex justify-between items-center mb-6 space-x-4">
         <h2 className="text-2xl font-bold ">Cylinder Management</h2>
-        <button className="bg-[#0097b2] text-white px-4 py-2 rounded-md ">
-          Add New Cylinder
+        <button className="flex space-x-2 items-center bg-[#0097b2] text-white px-4 py-2 rounded-md ">
+          <FaPlus className="" />
+          <span>Add Cylinder</span>
         </button>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4 shadow-md p-4 bg-white rounded-lg">

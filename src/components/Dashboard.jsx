@@ -3,7 +3,6 @@ import { useAuth } from "../hooks/auth/useAuth";
 import { PiCylinderLight } from "react-icons/pi";
 import { FcInspection } from "react-icons/fc";
 import { RiBuildingLine } from "react-icons/ri";
-import { FaPlus } from "react-icons/fa";
 
 const DashboardSection = ({ title, number, icon, border, color }) => {
   return (
