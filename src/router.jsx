@@ -11,6 +11,8 @@ import Home from "./routes/Home";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import Cylinders from "./routes/Cylinders";
 import Facilities from "./routes/Facilities";
+import Scan from "./routes/Scan";
+import Inventory from "./routes/Inventory";
 
 // Protected Home component
 const ProtectedHome = () => (
@@ -47,6 +49,17 @@ const facilitiesRoute = createRoute({
   path: "/facilities",
   component: Facilities,
 });
+
+const inventoryRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/inventory",
+  component: Inventory,
+});
+const scanRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/scan",
+  component: Scan,
+});
 const notFoundRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "*",
@@ -59,6 +72,8 @@ const routeTree = rootRoute.addChildren([
   homeRoute,
   cylindersRoute,
   facilitiesRoute,
+  inventoryRoute,
+  scanRoute,
   notFoundRoute,
 ]);
 
