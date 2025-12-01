@@ -80,7 +80,7 @@ const Dashboard = () => {
           </div>
           <div className="mt-8 p-6 bg-white rounded-lg shadow-md">
             <h3 className="font-semibold">Recent Activity</h3>
-            <p>No recent activity</p>
+            <p className="text-sm">No recent activity</p>
           </div>
         </div>
       </div>
