@@ -1,5 +1,23 @@
 import React from "react";
 import ScanTab from "./ScanTab";
+const ScanDialog = () => {
+  return (
+    <div className="shadow-md bg-white rounded-lg p-6 mt-6 max-w-xl mx-auto">
+      <div className="flex justify-center flex-col">
+        <h2 className="mb-2">Cylinder ID</h2>
+        <div>
+          <label>
+            <input type="text" placeholder="Enter or scan cylinder ID" />
+          </label>
+        </div>
+
+        <button className=" mt-6 flex justify-center items-center space-x-2 bg-[#0097b2] text-white px-4 py-2 rounded-md ">
+          Next
+        </button>
+      </div>
+    </div>
+  );
+};
 
 const ScanEntry = () => {
   return (
@@ -10,6 +28,7 @@ const ScanEntry = () => {
         <ScanTab tabs="2" title="Location & Status" />
         <ScanTab tabs="3" title="Details" />
       </div>
+      <ScanDialog />
     </div>
   );
 };
