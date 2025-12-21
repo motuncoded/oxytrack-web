@@ -7,7 +7,11 @@ const ScanDialog = () => {
         <h2 className="mb-2">Cylinder ID</h2>
         <div>
           <label>
-            <input type="text" placeholder="Enter or scan cylinder ID" />
+            <input
+              type="text"
+              placeholder="Enter or scan cylinder ID"
+              className="border-1 rounded-md border-gray-400 w-full p-2"
+            />
           </label>
         </div>
 
@@ -15,6 +19,14 @@ const ScanDialog = () => {
           Next
         </button>
       </div>
+    </div>
+  );
+};
+const RecentSearch = () => {
+  return (
+    <div className="shadow-md bg-white rounded-lg p-6 mt-6 max-w-xl mx-auto">
+      <h2 className="text-xl font-semibold mb-4">Recent Searches</h2>
+      <p className="text-center text-gray-500">No recent searches</p>
     </div>
   );
 };
@@ -29,6 +41,7 @@ const ScanEntry = () => {
         <ScanTab tabs="3" title="Details" />
       </div>
       <ScanDialog />
+      <RecentSearch />
     </div>
   );
 };
